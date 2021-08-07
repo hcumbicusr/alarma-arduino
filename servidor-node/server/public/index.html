@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>NodeJS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<style type="text/css" media="screen">
+		html, body {
+			height: 100%;
+		}
+		body {
+			display: flex;
+			align-items: center;
+			background: #34495e;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<div class="row justify-content-center align-self-center m-2">
+		<div class="card col-sm-6">
+			<h4 id="alarma_activada" class="p-4"></h4>
+			<div class="col-sm-12 justify-content-center align-self-center" style="display: inline-flex;">
+				<div class="col-sm-6">
+					<button id="btn-security-on" class="btn btn-success" onclick="sendSecurity('ON')">ACTIVAR</button>
+				</div>
+				<div class="col-sm-6">
+					<button id="btn-security-off" class="btn btn-danger" onclick="sendSecurity('OFF')">DESACTIVAR</button>
+				</div>
+			</div>
+		</div>
+		<div class="card col-sm-6">
+			<h4 id="alarma_encendida" class="p-4"></h4>
+			<div class="col-sm-12 justify-content-center align-self-center" style="display: inline-flex;">
+				<div class="col-sm-6">
+					<button id="btn-panic-on" class="btn btn-success" onclick="sendPanic('ON')">ENCENDER</button>
+				</div>
+				<div class="col-sm-6">
+					<button id="btn-panic-off" class="btn btn-danger" onclick="sendPanic('OFF')">APAGAR</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row justify-content-center align-self-center">
+		<div class="card col-sm-4">
+			<span class="title">PUERTA</span>
+			<h4 id="estado_puerta" class="p-4"></h4>
+		</div>
+		<div class="card col-sm-4">
+			<span class="title">MAMPARA</span>
+			<h4 id="estado_mampara" class="p-4"></h4>
+		</div>
+		<div class="card col-sm-4">
+			<span class="title">REJA</span>
+			<h4 id="estado_reja" class="p-4"></h4>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/socket.io/socket.io.js" charset="utf-8"></script>
+<script type="text/javascript" src="main.js" charset="utf-8"></script>
+</body>
+</html>
